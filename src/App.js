@@ -18,6 +18,30 @@ class App extends Component {
     };
   }
 
+  logIn = async loginInfo => {
+    try {
+      const loginResponse = await fetch("localHost3000/user/login", {
+        method: "POST",
+        credentials: "include",
+        body: JSON.stringify(loginInfo),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      const parsedResponse = await loginResponse.json();
+      this.setState(() => {
+        return {
+          ...parsedResponse.data,
+          loading: false,
+          isAuth: true
+        };
+      });
+      return parsedResponse;
+    } catch (err) {
+      console.log(err, "Error in login");
+    }
+  };
+
   render() {
     return (
       <main>
