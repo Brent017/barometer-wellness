@@ -20,7 +20,7 @@ class App extends Component {
 
   logIn = async loginInfo => {
     try {
-      const loginResponse = await fetch("localHost3000/user/login", {
+      const loginResponse = await fetch("localhost3000/login", {
         method: "POST",
         credentials: "include",
         body: JSON.stringify(loginInfo),
@@ -39,6 +39,31 @@ class App extends Component {
       return parsedResponse;
     } catch (err) {
       console.log(err, "Error in login");
+    }
+  };
+
+  register = async data => {
+    console.log(data);
+    try {
+      const registerResponse = await fetch("localhost3000/register", {
+        method: "POST",
+        credentials: "include",
+        body: data,
+        headers: {
+          enctype: "multipart/form-data"
+        }
+      });
+      const parsedResponse = await registerResponse.json();
+      console.log(parsedResponse);
+
+      this.setState({
+        ...parsedResponse.data,
+        loading: false,
+        isAuth: true
+      });
+      return parsedResponse;
+    } catch (err) {
+      console.log(err, "Error in register");
     }
   };
 
