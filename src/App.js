@@ -67,6 +67,12 @@ class App extends Component {
     }
   };
 
+  logout = () => {
+    this.setState({
+      isAuth: false
+    });
+  };
+
   render() {
     return (
       <main>
