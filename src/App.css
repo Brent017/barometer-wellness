@@ -16,3 +16,9 @@ h3 {
   margin: 10px;
   text-align: center;
 }
+
+h4 {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-size: 20px;
+}
