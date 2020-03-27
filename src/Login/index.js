@@ -62,9 +62,7 @@ class Login extends Component {
         verticalAlign="middle"
       >
         <Grid.Column style={{ textAlign: "center" }}>
-          <Header as="h1" color="teal">
-            Barometer Wellness
-          </Header>
+          <Header as="h1">Barometer Wellness</Header>
           <Form size="large">
             <Segment stacked>
               <Form.Input
