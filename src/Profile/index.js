@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
+import "../App.css";
 
 class Profile extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: "",
+      username: "USER",
       zipCode: "",
       history: []
     };
@@ -18,15 +19,9 @@ class Profile extends Component {
 
   render() {
     return (
-      <Grid stackable columns={3} padded className="Profile">
-        <Grid.Row>
-          <Grid.Column width={1}></Grid.Column>
-          <Grid.Column width={14}>
-            <h2>Welcome USER!</h2>
-          </Grid.Column>
-          <Grid.Column width={1}></Grid.Column>
-        </Grid.Row>
-      </Grid>
+      <div class="ui segment">
+        <h1 class="header">Welcome {this.state.username}!</h1>
+      </div>
     );
   }
 }

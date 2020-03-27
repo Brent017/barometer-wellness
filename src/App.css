@@ -1,3 +1,13 @@
+body {
+  background-color: #349beb;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  align-self: center;
+}
+
 h2 {
   font-family: "Dancing Script", cursive;
   font-weight: 700;
